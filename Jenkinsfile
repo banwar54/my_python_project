@@ -20,13 +20,13 @@ pipeline {
         // stage('Build Wheel') {
         //     steps {
         //         sh 'pip install build'
-        //         sh 'python -m build --wheel'
+        //         sh 'python3 -m build --wheel'
         //     }
         // }
 
         stage('Build Wheel') {
             steps {
-                sh 'pip install build --break-system-packages	'
+                sh 'pip install build'
                 sh 'python3 -m build --wheel'
             }
         }
