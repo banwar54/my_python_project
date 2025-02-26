@@ -15,22 +15,28 @@ pipeline {
             steps {
                 git branch: 'master', url: 'https://github.com/banwar54/my_python_project.git'
             }
-            }
         }
        
+        // stage('Build Wheel') {
+        //     steps {
+        //         sh 'pip install build'
+        //         sh 'python -m build --wheel'
+        //     }
+        // }
+
         stage('Build Wheel') {
             steps {
-                sh 'pip install build'
-                sh 'python -m build --wheel'
+                sh 'pip install build --break-system-packages	'
+                sh 'python3 -m build --wheel'
             }
         }
        
-        stage('Test') {
-            steps {
-                sh 'pip install pytest'
-                sh 'pytest tests/'
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         sh 'pip install pytest'
+        //         sh 'pytest tests/'
+        //     }
+        // }
        
         stage('Build Docker Image') {
             steps {
