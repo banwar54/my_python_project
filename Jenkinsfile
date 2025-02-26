@@ -26,7 +26,7 @@ pipeline {
 
         stage('Build Wheel') {
             steps {
-                sh 'pip install build'
+                sh 'pip install build --break-system-packages'
                 sh 'python3 -m build --wheel'
             }
         }
