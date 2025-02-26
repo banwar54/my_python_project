@@ -13,15 +13,3 @@ class TestMain(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-EOF
-
-# Step 6: Create a Dockerfile
-cat << EOF > Dockerfile
-FROM python:3.9-slim
-
-WORKDIR /app
-
-COPY dist/*.whl .
-RUN pip install *.whl
-
-CMD ["myapp"]

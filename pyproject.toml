@@ -8,7 +8,7 @@ version = "0.1.0"
 dependencies = []
 
 [project.scripts]
-my_python_project = "my_python_project.main:main"
+myapp = "my_python_project.main:main"
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/my_python_project"]
