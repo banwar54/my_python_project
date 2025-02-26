@@ -7,11 +7,14 @@ pipeline {
    
     stages {
         stage('Checkout') {
-            steps {
+            // steps {
                 // For local Git repo (adjust path if needed)
-                dir('/home/banwar/Python/my_python_project') {
-                    git branch: 'master', url: 'file:///home/banwar/Python/my_python_project'
-                }
+                // dir('/home/banwar/Python/my_python_project') {
+                //     git branch: 'master', url: 'file:///home/banwar/Python/my_python_project'
+                // }
+            steps {
+                git branch: 'master', url: 'https://github.com/banwar54/my_python_project.git'
+            }
             }
         }
        
